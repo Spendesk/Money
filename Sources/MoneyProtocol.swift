@@ -11,10 +11,11 @@
 import Foundation
 
 public protocol MoneyProtocol: SignedNumeric, ExpressibleByFloatLiteral, CustomStringConvertible {
+	associatedtype Currency: CurrencyProtocol
 
     var decimal: Decimal { get }
 
-    var currency: CurrencyProtocol { get }
+    var currency: Currency { get }
 
     init(decimal: Decimal)
 
