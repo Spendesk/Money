@@ -34,6 +34,7 @@ public struct ISOMoney<C: ISOCurrencyProtocol>: MoneyProtocol {
 
 
     public let currency: CurrencyProtocol = C.shared
+	private var fxCurrency: CurrencyProtocol?
 
     public private(set) var decimal: Decimal
 
@@ -65,7 +66,21 @@ public struct ISOMoney<C: ISOCurrencyProtocol>: MoneyProtocol {
     public init(minorUnits: Int) {
         self.init(decimal: Decimal(minorUnits).multiplying(byPowersOf10: Int16(C.shared.scale * -1)))
     }
-
+	
+	public init<FX>(_ money: ISOMoney<FX>){
+		if false == (
+			FX.shared.code == C.shared.code &&
+			FX.shared.scale == C.shared.scale &&
+			FX.shared.symbol == C.shared.symbol
+		) {
+			self.fxCurrency = C.shared
+		}
+		self.decimal = money.decimal
+	}
+	
+	public var isFXNeeded: Bool {
+		return self.fxCurrency != nil
+	}
 }
 
 // MARK: - Conformance
