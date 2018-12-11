@@ -337,6 +337,12 @@ extension Currency {
       public static let shared = BYB(code: "BYB")
    }
 
+   /// Currency BYN
+   public final class BYN: BaseCurrency, ISOCurrencyProtocol {
+      /// - returns: shared instance for Currency.BYN
+      public static let shared = BYN(code: "BYN")
+   }
+
    /// Currency BYR
    public final class BYR: BaseCurrency, ISOCurrencyProtocol {
       /// - returns: shared instance for Currency.BYR
@@ -395,6 +401,12 @@ extension Currency {
    public final class CLP: BaseCurrency, ISOCurrencyProtocol {
       /// - returns: shared instance for Currency.CLP
       public static let shared = CLP(code: "CLP")
+   }
+
+   /// Currency CNH
+   public final class CNH: BaseCurrency, ISOCurrencyProtocol {
+      /// - returns: shared instance for Currency.CNH
+      public static let shared = CNH(code: "CNH")
    }
 
    /// Currency CNX
@@ -1039,6 +1051,12 @@ extension Currency {
       public static let shared = MRO(code: "MRO")
    }
 
+   /// Currency MRU
+   public final class MRU: BaseCurrency, ISOCurrencyProtocol {
+      /// - returns: shared instance for Currency.MRU
+      public static let shared = MRU(code: "MRU")
+   }
+
    /// Currency MTL
    public final class MTL: BaseCurrency, ISOCurrencyProtocol {
       /// - returns: shared instance for Currency.MTL
@@ -1385,6 +1403,12 @@ extension Currency {
    public final class STD: BaseCurrency, ISOCurrencyProtocol {
       /// - returns: shared instance for Currency.STD
       public static let shared = STD(code: "STD")
+   }
+
+   /// Currency STN
+   public final class STN: BaseCurrency, ISOCurrencyProtocol {
+      /// - returns: shared instance for Currency.STN
+      public static let shared = STN(code: "STN")
    }
 
    /// Currency SUR
@@ -1789,6 +1813,12 @@ extension Currency {
       public static let shared = ZRZ(code: "ZRZ")
    }
 
+   /// Currency ZWD
+   public final class ZWD: BaseCurrency, ISOCurrencyProtocol {
+      /// - returns: shared instance for Currency.ZWD
+      public static let shared = ZWD(code: "ZWD")
+   }
+
    /// Currency ZWL
    public final class ZWL: BaseCurrency, ISOCurrencyProtocol {
       /// - returns: shared instance for Currency.ZWL
@@ -1799,12 +1829,6 @@ extension Currency {
    public final class ZWR: BaseCurrency, ISOCurrencyProtocol {
       /// - returns: shared instance for Currency.ZWR
       public static let shared = ZWR(code: "ZWR")
-   }
-
-   /// Currency ZWD
-   public final class ZWD: BaseCurrency, ISOCurrencyProtocol {
-      /// - returns: shared instance for Currency.ZWD
-      public static let shared = ZWD(code: "ZWD")
    }
 }
 
@@ -1974,6 +1998,9 @@ public typealias BWP = ISOMoney<Currency.BWP>
 /// BYB Money
 public typealias BYB = ISOMoney<Currency.BYB>
 
+/// BYN Money
+public typealias BYN = ISOMoney<Currency.BYN>
+
 /// BYR Money
 public typealias BYR = ISOMoney<Currency.BYR>
 
@@ -2003,6 +2030,9 @@ public typealias CLF = ISOMoney<Currency.CLF>
 
 /// CLP Money
 public typealias CLP = ISOMoney<Currency.CLP>
+
+/// CNH Money
+public typealias CNH = ISOMoney<Currency.CNH>
 
 /// CNX Money
 public typealias CNX = ISOMoney<Currency.CNX>
@@ -2325,6 +2355,9 @@ public typealias MOP = ISOMoney<Currency.MOP>
 /// MRO Money
 public typealias MRO = ISOMoney<Currency.MRO>
 
+/// MRU Money
+public typealias MRU = ISOMoney<Currency.MRU>
+
 /// MTL Money
 public typealias MTL = ISOMoney<Currency.MTL>
 
@@ -2498,6 +2531,9 @@ public typealias SSP = ISOMoney<Currency.SSP>
 
 /// STD Money
 public typealias STD = ISOMoney<Currency.STD>
+
+/// STN Money
+public typealias STN = ISOMoney<Currency.STN>
 
 /// SUR Money
 public typealias SUR = ISOMoney<Currency.SUR>
@@ -2700,11 +2736,11 @@ public typealias ZRN = ISOMoney<Currency.ZRN>
 /// ZRZ Money
 public typealias ZRZ = ISOMoney<Currency.ZRZ>
 
+/// ZWD Money
+public typealias ZWD = ISOMoney<Currency.ZWD>
+
 /// ZWL Money
 public typealias ZWL = ISOMoney<Currency.ZWL>
 
 /// ZWR Money
 public typealias ZWR = ISOMoney<Currency.ZWR>
-
-/// ZWD Money
-public typealias ZWD = ISOMoney<Currency.ZWD>

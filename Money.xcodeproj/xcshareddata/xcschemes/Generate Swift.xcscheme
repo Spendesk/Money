@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "65599E711DB3D17E00EC123C"
-               BuildableName = "Money.framework"
-               BlueprintName = "Money"
+               BlueprintIdentifier = "65687D5B1DB3D8B70016FB31"
+               BuildableName = "Generate Swift"
+               BlueprintName = "Generate Swift"
                ReferencedContainer = "container:Money.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,29 +26,9 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      codeCoverageEnabled = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "65599E7B1DB3D17F00EC123C"
-               BuildableName = "MoneyTests.xctest"
-               BlueprintName = "MoneyTests"
-               ReferencedContainer = "container:Money.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "65599E711DB3D17E00EC123C"
-            BuildableName = "Money.framework"
-            BlueprintName = "Money"
-            ReferencedContainer = "container:Money.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -65,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "65599E711DB3D17E00EC123C"
-            BuildableName = "Money.framework"
-            BlueprintName = "Money"
+            BlueprintIdentifier = "65687D5B1DB3D8B70016FB31"
+            BuildableName = "Generate Swift"
+            BlueprintName = "Generate Swift"
             ReferencedContainer = "container:Money.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -83,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "65599E711DB3D17E00EC123C"
-            BuildableName = "Money.framework"
-            BlueprintName = "Money"
+            BlueprintIdentifier = "65687D5B1DB3D8B70016FB31"
+            BuildableName = "Generate Swift"
+            BlueprintName = "Generate Swift"
             ReferencedContainer = "container:Money.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
