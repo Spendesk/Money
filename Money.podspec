@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name              = "Money"
-  s.version           = "2.0.2"
+  s.version           = "4.0.0"
   s.summary           = "Swift types for working with Money."
   s.description       = <<-DESC
   
@@ -21,6 +21,7 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.11'
   s.tvos.deployment_target = '9.0'
   s.watchos.deployment_target = '2.0'
+  s.swift_version = '5.0'
 
   s.source_files = [
     'Sources/*.swift'
