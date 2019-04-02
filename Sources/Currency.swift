@@ -65,7 +65,7 @@ extension Currency {
             self.symbol = symbol
         }
 
-        convenience init(code: String) {
+        public convenience init(code: String) {
             let idFromComponents = NSLocale.localeIdentifier(fromComponents: [NSLocale.Key.currencyCode.rawValue: code])
             let canonical = NSLocale.canonicalLocaleIdentifier(from: idFromComponents)
             let nslocale = NSLocale(localeIdentifier: canonical)
