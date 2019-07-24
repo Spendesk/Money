@@ -12,54 +12,60 @@ import Foundation
 
 /**
  # CurrencyProtocol
-
+ 
  This protocol defines the minimum interface needed for
  a CurrencyProtocol.
-
+ 
  The interface is used to represent a single currency.
  */
 public protocol CurrencyProtocol {
-
-    /// The currency code
-    var code: String { get }
-
-    /// The currency scale
-    var scale: Int { get }
-
-    /// The currency symbol
-    var symbol: String? { get }
-
-    /// Create a number formatter
-    func numberFormatter(withStyle: NumberFormatter.Style, forLocaleId: String) -> NumberFormatter
+  
+  /// The currency code
+  var code: String { get }
+  
+  /// The currency scale
+  var scale: Int { get }
+  
+  /// The currency symbol
+  var symbol: String? { get }
+  
+  /// Create a number formatter
+  func numberFormatter(withStyle: NumberFormatter.Style, minimumDecimalDigits: Int?, maximumDecimalDigits: Int?, forLocaleId: String) -> NumberFormatter
 }
 
 public protocol ISOCurrencyProtocol: CurrencyProtocol {
-
-    static var shared: Self { get }
+  
+  static var shared: Self { get }
 }
 
 
 public extension CurrencyProtocol {
-
-    func numberFormatter(withStyle style: NumberFormatter.Style, forLocaleId localeId: String) -> NumberFormatter {
-        let canonicalId = Locale.canonicalIdentifier(from: localeId)
-        let locale = Locale(identifier: "\(canonicalId)@currency=\(code)")
-        return numberFormatter(withStyle: style, for: locale)
+  
+  func numberFormatter(withStyle style: NumberFormatter.Style, minimumDecimalDigits: Int? = nil, maximumDecimalDigits: Int? = nil, forLocaleId localeId: String) -> NumberFormatter {
+    let canonicalId = Locale.canonicalIdentifier(from: localeId)
+    let locale = Locale(identifier: "\(canonicalId)@currency=\(code)")
+    return numberFormatter(withStyle: style, minimumDecimalDigits: minimumDecimalDigits, maximumDecimalDigits: maximumDecimalDigits, for: locale)
+  }
+  
+  func numberFormatter(withStyle style: NumberFormatter.Style, minimumDecimalDigits: Int? = nil, maximumDecimalDigits: Int? = nil, for locale: Locale) -> NumberFormatter {
+    
+    let formatter = NumberFormatter()
+    formatter.locale = locale
+    formatter.numberStyle = style
+    formatter.currencyCode = code
+    if let minimumDecimalDigits = minimumDecimalDigits {
+      formatter.minimumFractionDigits = minimumDecimalDigits
     }
-
-    func numberFormatter(withStyle style: NumberFormatter.Style, for locale: Locale) -> NumberFormatter {
-
-        let formatter = NumberFormatter()
-        formatter.locale = locale
-        formatter.numberStyle = style
-        formatter.currencyCode = code
-        formatter.currencySymbol = symbol ?? locale.currencySymbol
-        return formatter
+    if let maximumDecimalDigits = maximumDecimalDigits {
+      formatter.maximumFractionDigits = maximumDecimalDigits
     }
-
-    func makeDecimalFormatter(withStyle style: NumberFormatter.Style, for locale: Locale) -> (NSDecimalNumber) -> String {
-        let formatter = numberFormatter(withStyle: style, for: locale)
-        return { formatter.string(from: $0) ?? $0.description }
-    }
+    formatter.currencySymbol = symbol ?? locale.currencySymbol
+    return formatter
+  }
+  
+  func makeDecimalFormatter(withStyle style: NumberFormatter.Style, for locale: Locale) -> (NSDecimalNumber) -> String {
+    let formatter = numberFormatter(withStyle: style, for: locale)
+    return { formatter.string(from: $0) ?? $0.description }
+  }
 }
 
