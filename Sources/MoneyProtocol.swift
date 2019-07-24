@@ -42,9 +42,9 @@ public extension MoneyProtocol {
         return formatted(withStyle: .currency, forLocaleId: Locale.current.identifier)
     }
 
-    func formatted(withStyle style: NumberFormatter.Style = .currency, forLocaleId localeId: String = Locale.current.identifier) -> String {
-        return currency.numberFormatter(withStyle: style, forLocaleId: localeId).string(from: decimal as NSDecimalNumber) ?? decimal.description
-    }
+  func formatted(withStyle style: NumberFormatter.Style = .currency, minimumDecimalDigits: Int? = nil, maximumDecimalDigits: Int? = nil, forLocaleId localeId: String = Locale.current.identifier) -> String {
+    return currency.numberFormatter(withStyle: style, minimumDecimalDigits: minimumDecimalDigits, maximumDecimalDigits: maximumDecimalDigits, forLocaleId: localeId).string(from: decimal as NSDecimalNumber) ?? decimal.description
+  }
 }
 
 extension MoneyProtocol {
