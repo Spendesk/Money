@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.homepage          = "https://github.com/danthorpe/Money"
   s.license           = 'MIT'
   s.author            = { "Daniel Thorpe" => "@danthorpe" }
-  s.source            = { :git => "https://github.com/Valpertui/Money.git", :tag => s.version.to_s }
+  s.source            = { :git => "https://github.com/Spendesk/Money.git", :tag => s.version.to_s }
   s.module_name       = 'Money'
   s.social_media_url  = 'https://twitter.com/danthorpe'
   s.requires_arc      = true
